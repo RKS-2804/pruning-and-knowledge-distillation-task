@@ -1,0 +1,22 @@
+# DONUT-base-pruned model configuration
+# DONUT-base model with magnitude-based pruning applied
+
+input_size: [2560, 1920]
+align_long_axis: false
+window_size: 10
+encoder_layer: [2, 2, 14, 2]
+decoder_layer: 4
+max_length: 1536
+name_or_path: "naver-clova-ix/donut-base"
+
+# Adapter settings
+use_adapter: false
+adapter_bottleneck_dim: 256
+
+# Distillation settings
+distillation_temperature: 2.0
+distillation_alpha: 0.5
+
+# Pruning settings
+pruning_sparsity: 0.5  # 50% sparsity via magnitude pruning
+pruning_method: "magnitude"  # Type of pruning to apply

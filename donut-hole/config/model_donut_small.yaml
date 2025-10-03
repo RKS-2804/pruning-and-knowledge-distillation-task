@@ -1,0 +1,22 @@
+# DONUT-small model configuration
+# Smaller DONUT model with reduced encoder/decoder layers for efficiency
+
+input_size: [1280, 960]
+align_long_axis: false
+window_size: 7
+encoder_layer: [2, 2, 6, 2]
+decoder_layer: 2
+max_length: 768
+name_or_path: "naver-clova-ix/donut-small"
+
+# Adapter settings
+use_adapter: true
+adapter_bottleneck_dim: 256
+
+# Distillation settings
+teacher_model_path: "naver-clova-ix/donut-base"
+distillation_temperature: 2.0
+distillation_alpha: 0.5
+
+# Pruning settings
+pruning_sparsity: 0.0  # No pruning for small model
